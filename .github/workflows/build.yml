@@ -28,7 +28,7 @@ jobs:
         with:
           distribution: 'adopt' # Java的发行版
           java-version: '17' # Java的版本
-          gradle-project-path: Paper-Server # Gradle项目的路径
+          gradle-project-path: build/libs # Gradle项目的路径
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -44,14 +44,12 @@ jobs:
           GIT_COMMITTER_NAME: CerealAxis
           GIT_COMMITTER_EMAIL: none@example.com
 
-
-      # 第四步：运行./gradlew reobfJar命令来编译Folia
-      - name: Build Folia
-        run: ./gradlew reobfJar
-
-      # 第五步：使用actions/upload-artifact@v2动作来上传编译好的jar文件
-      - name: Upload artifact
+      - name: Apply Patches
+        run: ./gradlew applyPatches --stacktrace
+      - name: Build Paperclip jar
+        run: ./gradlew createReobfPaperclipJar --stacktrace
+      - name: Upload Paperclip jar
         uses: actions/upload-artifact@v2
         with:
-          name: folia.jar # jar文件的名字
-          path: Paper-Server/build/libs/folia-paperclip.jar # jar文件的路径
+          name: folia.jar
+          path: build/libs/folia-paperclip-*-reobf.jar
