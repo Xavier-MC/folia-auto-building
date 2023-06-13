@@ -50,8 +50,7 @@ jobs:
 
       # 第五步：使用actions/upload-artifact@v2动作来上传编译好的jar文件
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: folia.jar # jar文件的名字
-          path: build/libs/folia-paperclip-*-reobf.jar # jar文件的路径
-
+      uses: actions/upload-artifact@v2
+      with:
+      name: folia.jar # jar文件的名字
+      path: Paper-Server/build/libs/folia-paperclip.jar # jar文件的路径
