@@ -44,8 +44,6 @@ jobs:
           GIT_COMMITTER_NAME: CerealAxis
           GIT_COMMITTER_EMAIL: none@example.com
 
-      - name: Apply Patches
-        run: ./gradlew applyPatches --stacktrace
       - name: Build Paperclip jar
         run: ./gradlew createReobfPaperclipJar --stacktrace
       - name: Upload Paperclip jar
