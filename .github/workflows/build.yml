@@ -28,7 +28,7 @@ jobs:
         with:
           distribution: 'adopt' # Java的发行版
           java-version: '17' # Java的版本
-          gradle-project-path: Paper-Server/build/libs # Gradle项目的路径
+          gradle-project-path: Paper-Server # Gradle项目的路径
 
       - name: Setup Node
         uses: actions/setup-node@v3
