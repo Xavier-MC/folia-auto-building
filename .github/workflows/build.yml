@@ -48,5 +48,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: folia.jar # jar文件的名字
-          path: Paper-Server/build/libs/folia.jar # jar文件的路径
+          path: build/libs/folia-paperclip-*-reobf.jar # jar文件的路径
 
