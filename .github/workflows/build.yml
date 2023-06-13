@@ -21,8 +21,6 @@ jobs:
         with:
           repository: PaperMC/Folia # Folia的仓库名
           ref: master # Folia的分支名
-          user.name: CerealAxis
-          user.email: cerealaxis@xavier.asia
 
       # 第二步：使用actions/setup-java@v2动作来安装Java环境
       - name: Setup Java
@@ -34,6 +32,15 @@ jobs:
       # 第三步：运行./gradlew applyPatches命令来应用补丁
       - name: Apply patches
         run: ./gradlew applyPatches
+        
+      - name: Apply patches
+        run: ./gradlew applyPatches
+        env:
+          GIT_AUTHOR_NAME: CerealAxis
+          GIT_AUTHOR_EMAIL: none@example.com
+          GIT_COMMITTER_NAME: CerealAxis
+          GIT_COMMITTER_EMAIL: none@example.com
+
 
       # 第四步：运行./gradlew reobfJar命令来编译Folia
       - name: Build Folia
