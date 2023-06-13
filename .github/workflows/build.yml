@@ -3,9 +3,9 @@
 name: Build Folia
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev/1.20" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev/1.20" ]
 
 # 这个工作流定义了一个名为build的任务
 jobs:
