@@ -21,6 +21,8 @@ jobs:
         with:
           repository: PaperMC/Folia # Folia的仓库名
           ref: master # Folia的分支名
+          user.name: CerealAxis
+          user.email: cerealaxis@xavier.asia
 
       # 第二步：使用actions/setup-java@v2动作来安装Java环境
       - name: Setup Java
